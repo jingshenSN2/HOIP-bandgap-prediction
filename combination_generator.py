@@ -67,7 +67,6 @@ def __add_hash(df):
     df['hash']=hash_list
     return df
 
-#TODO 需要优化算法
 def unknown_combination_seperator(cwd):
     dfAll = __add_hash(pd.read_csv(cwd+'all_combination.csv', header=0))
     dfKnown = __add_hash(pd.read_csv(cwd+'HOIP-30.csv', header=0))
