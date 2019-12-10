@@ -58,3 +58,26 @@ def combination_generator(cwd):
                 df = df.append(newRow,ignore_index=True)
     df.to_csv(cwd+'all_combination.csv',index=False)
 
+def __add_hash(df):
+    hash_list = []
+    for i in range(len(df)):
+        row = df.iloc[i]
+        abx = str(row['A-site']) + str(row['B-site']) + str(row['X-site'])
+        hash_list.append(hash(abx))
+    df['hash']=hash_list
+    return df
+
+#TODO 需要优化算法
+def unknown_combination_seperator(cwd):
+    dfAll = __add_hash(pd.read_csv(cwd+'all_combination.csv', header=0))
+    dfKnown = __add_hash(pd.read_csv(cwd+'HOIP-30.csv', header=0))
+    known_hash = {}
+    for i in list(dfKnown['hash']):
+        known_hash[i] = 1
+    drop_list = []
+    for ia in range(len(dfAll)):
+        if dfAll.iloc[ia]['hash'] in known_hash:
+            drop_list.append(ia)
+    dfAll.drop(drop_list, inplace=True)
+    dfAll.to_csv(cwd+'unknown_comb.csv',index=False)
+
