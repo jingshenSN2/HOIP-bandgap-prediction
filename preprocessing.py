@@ -14,5 +14,5 @@ def preprocessing(cwd):
     trates_X = df_all_mm[0:203]
     predict_X = df_all_mm[203:-1]
     X_train, X_test, y_train, y_test = train_test_split(trates_X, trates_y, test_size=0.20, random_state=1)
-    return X_train, X_test, y_train, y_test, predict_X
+    return X_train, X_test, y_train, y_test, predict_X, list(trates.columns)
 

@@ -1,0 +1,74 @@
+number,reg_score,adj. r**2,feature_list
+30,0.9593338188806523,0.6812855041925445,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'A_LUMO' 'r_B'
+ 'IE_B' 'P_B' 'EA_B' 'X_p-electron' 'IC_B' '1st_IP_B' 'VE_B'
+ 'B_d-electron' '1st_IP_X' 'χ_X' 'P_X' 'IC_X' 'r_X_s+p' 'r_X'
+ 'X_s-electron' 'B_p-electron' 'EA_X' 'B_s-electron' 'X_d-electron'
+ 'B_f-electron' 'X_f-electron']"
+29,0.9598109771653063,0.713589497770982,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'A_LUMO' 'r_B'
+ 'IE_B' 'P_B' 'EA_B' 'X_p-electron' 'IC_B' '1st_IP_B' 'VE_B'
+ 'B_d-electron' '1st_IP_X' 'χ_X' 'P_X' 'IC_X' 'r_X_s+p' 'r_X'
+ 'X_s-electron' 'B_p-electron' 'EA_X' 'B_s-electron' 'X_d-electron'
+ 'X_f-electron']"
+28,0.9593472410186241,0.7344904295001538,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'A_LUMO' 'r_B'
+ 'IE_B' 'P_B' 'EA_B' 'X_p-electron' 'IC_B' '1st_IP_B' 'VE_B'
+ 'B_d-electron' '1st_IP_X' 'χ_X' 'P_X' 'IC_X' 'r_X_s+p' 'r_X'
+ 'X_s-electron' 'B_p-electron' 'EA_X' 'B_s-electron' 'X_d-electron']"
+27,0.9583802448836964,0.7492082885641045,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'A_LUMO' 'r_B'
+ 'IE_B' 'P_B' 'EA_B' 'X_p-electron' 'IC_B' '1st_IP_B' 'VE_B'
+ 'B_d-electron' '1st_IP_X' 'χ_X' 'P_X' 'IC_X' 'r_X_s+p' 'r_X'
+ 'X_s-electron' 'EA_X' 'B_s-electron' 'X_d-electron']"
+26,0.9597152842160089,0.774438362165185,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'A_LUMO' 'r_B'
+ 'IE_B' 'P_B' 'EA_B' 'X_p-electron' 'IC_B' '1st_IP_B' 'VE_B' '1st_IP_X'
+ 'χ_X' 'P_X' 'IC_X' 'r_X_s+p' 'r_X' 'X_s-electron' 'EA_X' 'B_s-electron'
+ 'X_d-electron']"
+25,0.9587701950700424,0.7846407652123922,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'A_LUMO' 'r_B'
+ 'IE_B' 'P_B' 'EA_B' 'X_p-electron' '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X'
+ 'P_X' 'IC_X' 'r_X_s+p' 'r_X' 'X_s-electron' 'EA_X' 'B_s-electron'
+ 'X_d-electron']"
+24,0.9599124272506874,0.8035796699757655,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'A_LUMO' 'r_B'
+ 'IE_B' 'P_B' 'EA_B' 'X_p-electron' '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X'
+ 'IC_X' 'r_X_s+p' 'r_X' 'X_s-electron' 'EA_X' 'B_s-electron'
+ 'X_d-electron']"
+23,0.9600361764554923,0.8156928473018381,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'A_LUMO' 'r_B'
+ 'IE_B' 'P_B' 'EA_B' 'X_p-electron' '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X'
+ 'IC_X' 'r_X_s+p' 'r_X' 'X_s-electron' 'EA_X' 'B_s-electron']"
+22,0.9595045364003353,0.8236643452729385,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'A_LUMO' 'r_B'
+ 'IE_B' 'P_B' 'EA_B' 'X_p-electron' '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X'
+ 'r_X_s+p' 'r_X' 'X_s-electron' 'EA_X' 'B_s-electron']"
+21,0.9581502627330549,0.8274777388956256,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'r_B' 'IE_B' 'P_B'
+ 'EA_B' 'X_p-electron' '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X' 'r_X_s+p' 'r_X'
+ 'X_s-electron' 'EA_X' 'B_s-electron']"
+20,0.957600422982716,0.833997140193353,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'r_B' 'IE_B' 'P_B'
+ 'EA_B' 'X_p-electron' '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X' 'r_X_s+p' 'r_X'
+ 'X_s-electron' 'B_s-electron']"
+19,0.9567058233476756,0.8386400617663885,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'r_B' 'IE_B' 'P_B'
+ 'X_p-electron' '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X' 'r_X_s+p' 'r_X'
+ 'X_s-electron' 'B_s-electron']"
+18,0.9521044274759061,0.8300051651258598,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'IE_B' 'P_B'
+ 'X_p-electron' '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X' 'r_X_s+p' 'r_X'
+ 'X_s-electron' 'B_s-electron']"
+17,0.95160442269257,0.8357408300661902,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'A_HOMO' 'χ_B' 'r_B_s+p' 'IE_B' 'P_B'
+ 'X_p-electron' '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X' 'r_X_s+p' 'r_X'
+ 'B_s-electron']"
+16,0.9488044269997052,0.8337164011570649,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'χ_B' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron'
+ '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X' 'r_X_s+p' 'r_X' 'B_s-electron']"
+15,0.9478767331536211,0.8375524820063696,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'χ_B' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron'
+ '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X' 'r_X' 'B_s-electron']"
+14,0.948057660560386,0.8443281965342032,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'χ_B' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron'
+ '1st_IP_B' 'VE_B' '1st_IP_X' 'χ_X' 'r_X']"
+13,0.9482294287640347,0.8505763697395075,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'χ_B' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron'
+ '1st_IP_B' 'VE_B' 'χ_X' 'r_X']"
+12,0.9443248529726873,0.8453563256312678,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron'
+ '1st_IP_B' 'VE_B' 'χ_X' 'r_X']"
+11,0.9436978300193383,0.8490559922527005,"['T_f' 'O_f' 'r_A.eff' 'P_A' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron'
+ '1st_IP_B' 'VE_B' 'χ_X']"
+10,0.9563295179026946,0.8860881957493337,"['T_f' 'r_A.eff' 'P_A' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron' '1st_IP_B'
+ 'VE_B' 'χ_X']"
+9,0.957258797969829,0.892057298439538,['T_f' 'P_A' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron' '1st_IP_B' 'VE_B' 'χ_X']
+8,0.9557257958820313,0.8917647461429277,['P_A' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron' '1st_IP_B' 'VE_B' 'χ_X']
+7,0.9522379589894534,0.8869783400489697,['P_A' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron' 'VE_B' 'χ_X']
+6,0.9519304423154396,0.8896136082433745,['P_A' 'r_B_s+p' 'IE_B' 'P_B' 'X_p-electron' 'VE_B']
+5,0.9564588522264954,0.9026440411456286,['P_A' 'r_B_s+p' 'IE_B' 'X_p-electron' 'VE_B']
+4,0.7802227554032161,0.5652750533877631,['P_A' 'r_B_s+p' 'IE_B' 'VE_B']
+3,0.7612888915097141,0.545471109552529,['P_A' 'r_B_s+p' 'IE_B']
+2,0.764621257833123,0.5627849136108496,['P_A' 'IE_B']
