@@ -11,6 +11,7 @@ def __boxplot(cwd, data, name):
     plt.subplots_adjust(hspace=0.3, wspace=0.3)
     plt.savefig(cwd + name)
 
+#TODO 这样画出的密度图对连续分布和离散分布的数据没有区分
 def __density(cwd, data, name):
     plt.figure(figsize=(18, 12))
     for i in range(30):
@@ -19,7 +20,8 @@ def __density(cwd, data, name):
         if i == 29:
             continue
         else:
-            data.iloc[:, i].plot(kind='kde')
+            data.iloc[:, i].plot(kind='kde',label=data.columns[i])
+            plt.legend(loc='upper right')
     plt.subplots_adjust(hspace=0.3, wspace=0.3)
     plt.savefig(cwd + name)
 
