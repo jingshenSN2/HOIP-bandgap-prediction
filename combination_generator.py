@@ -1,7 +1,9 @@
 import pandas as pd
 import math
 
-def combination_generator(cwd):
+def combination_generator(cwd, silent=0):
+    if silent>0:
+        print('开始：生成特征组合的全集')
     dfA = pd.read_csv(cwd+'A_feature.csv',header=0)
     dfB = pd.read_csv(cwd+'B_feature.csv',header=0)
     dfX = pd.read_csv(cwd+'X_feature.csv',header=0)
@@ -57,6 +59,8 @@ def combination_generator(cwd):
                  ]],columns=df.columns)
                 df = df.append(newRow,ignore_index=True)
     df.to_csv(cwd+'all_combination.csv',index=False)
+    if silent>0:
+        print('结束：生成特征组合的全集')
 
 def __add_hash(df):
     hash_list = []
@@ -67,9 +71,11 @@ def __add_hash(df):
     df['hash']=hash_list
     return df
 
-def unknown_combination_seperator(cwd):
+def unknown_combination_seperator(cwd, silent=0):
+    if silent>0:
+        print('开始：生成特征组合的补集')
     dfAll = __add_hash(pd.read_csv(cwd+'all_combination.csv', header=0))
-    dfKnown = __add_hash(pd.read_csv(cwd+'HOIP-30.csv', header=0))
+    dfKnown = __add_hash(pd.read_csv(cwd+'HOIP-30_drop.csv', header=0))
     known_hash = {}
     for i in list(dfKnown['hash']):
         known_hash[i] = 1
@@ -78,5 +84,8 @@ def unknown_combination_seperator(cwd):
         if dfAll.iloc[ia]['hash'] in known_hash:
             drop_list.append(ia)
     dfAll.drop(drop_list, inplace=True)
+    dfAll.drop(['hash'], axis=1, inplace=True)
     dfAll.to_csv(cwd+'unknown_comb.csv',index=False)
+    if silent>0:
+        print('结束：生成特征组合的补集')
 

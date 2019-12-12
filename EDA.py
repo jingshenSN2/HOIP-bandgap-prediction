@@ -26,7 +26,7 @@ def __density(cwd, data, name):
     plt.savefig(cwd + name)
 
 def raw_data_describe(cwd):
-    data = pd.read_csv(cwd+'all_combination.csv',header=0)
+    data = pd.read_csv(cwd+'HOIP-30_drop.csv',header=0)
     data.drop(['A-site','B-site','X-site'], axis=1, inplace=True)
     data.describe(include=[np.number]).to_csv(cwd+'eda\\raw_describe.csv')
     __boxplot(cwd, data, 'eda\\raw_boxplot.png')
@@ -35,7 +35,7 @@ def raw_data_describe(cwd):
 
 def pre_processing_data_describe(cwd):
     scaler = MinMaxScaler()
-    data = pd.read_csv(cwd+'all_combination.csv',header=0)
+    data = pd.read_csv(cwd+'HOIP-30_drop.csv',header=0)
     data.drop(['A-site','B-site','X-site'], axis=1, inplace=True)
     npdata = scaler.fit_transform(data)
     data = pd.DataFrame(npdata,columns= data.columns)
