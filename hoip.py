@@ -18,16 +18,19 @@ model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model\\'
 #cg.combination_generator(data_directory, silent=0)
 #cg.unknown_combination_seperator(data_directory, silent=0)
 
+#初始数据集和归一化后初始数据集的特征统计描述
 #e.raw_data_describe(data_directory)
 #e.pre_processing_data_describe(data_directory)
 
-#X_train, X_test, y_train, y_test, predict_X, features = pre.preprocessing(data_directory)
-
+#不同方法做每次舍弃最差的特征筛选
 feature_selection_gbr_reg_list = fs.feature_selector_ensemble('gbr', data_directory, model_directory)
 feature_selection_rfr_reg_list = fs.feature_selector_ensemble('rfr', data_directory, model_directory)
 feature_selection_abr_reg_list = fs.feature_selector_ensemble('abr', data_directory, model_directory)
 feature_selection_etr_reg_list = fs.feature_selector_ensemble('etr', data_directory, model_directory)
+
+#考察PCA降维的影响
 #feature_selection_mlp_reg_list = fs.feature_selector_mlp(X_train, X_test, y_train, y_test, features, model_directory)
-#X_train, X_test, y_train, y_test, predict_X, features = pre.preprocessing(data_directory)
-#feature_selection_pca_reg_list = fs.feature_selector_pca(X_train, X_test, y_train, y_test, features, model_directory)
+
+
+
 #g.gbr(X_train, X_test, y_train, y_test, features)

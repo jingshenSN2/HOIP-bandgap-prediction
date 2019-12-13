@@ -8,6 +8,7 @@ from sklearn.neural_network import MLPRegressor
 import pandas as pd
 import numpy as np
 import preprocessing as pre
+import matplotlib.pyplot as plt
 
 def __ensemble_test(type, X_train, X_test, y_train, y_test):
     if type.lower() == 'gbr':
@@ -21,12 +22,22 @@ def __ensemble_test(type, X_train, X_test, y_train, y_test):
     reg.fit(X_train, y_train)
     return reg, reg.score(X_test, y_test), reg.feature_importances_
 
+def __plot(type,df, cwdm):
+    plt.scatter(df['number'],df['reg_score'], marker='o', c='black', label='R**2')
+    plt.scatter(df['number'],df['adj. r**2'], marker='o', c='blue', label='Adj. R**2')
+    plt.xlabel('N_feature')
+    plt.ylabel('Score of ' + type + ' model' )
+    plt.axis([-1, 31, 0, 1])
+    plt.legend(loc=8)
+    plt.savefig(cwdm + 'feature_score_' + type+'.png')
+    plt.close()
+
 def feature_selector_ensemble(type, cwdd, cwdm):
-    X_train, X_test, y_train, y_test, predict_X, features = pre.preprocessing(cwdd)
+    X_train, X_test, y_train, y_test, predict_X, features = pre.raw_preprocessing(cwdd)
     reg_list = []
     local_feature = features
     df = pd.DataFrame(columns=['number','reg_score','adj. r**2','feature_list'])
-    while len(local_feature) > 1:
+    while len(local_feature) >= 1:
         reg, score, weight = __ensemble_test(type, X_train, X_test, y_train, y_test)
         reg_list.append(reg)
         df = df.append(pd.DataFrame([[len(local_feature),score,1-(1-score*score)*(40)/(40-len(local_feature)),', '.join(local_feature)]],columns=df.columns), ignore_index=True)
@@ -35,6 +46,7 @@ def feature_selector_ensemble(type, cwdd, cwdm):
         X_train = np.delete(X_train, low, axis=1)
         X_test = np.delete(X_test, low, axis=1)
     df.to_csv(cwdm+'feature_selection_%s.csv'%type, index=False)
+    __plot(type, df, cwdm)
     return reg_list
 
 def __mlp_test(X_train, X_test, y_train, y_test):
