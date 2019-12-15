@@ -23,18 +23,18 @@ def __ensemble_test(type, X_train, X_test, y_train, y_test):
     return reg, reg.score(X_test, y_test), reg.feature_importances_
 
 
-def __plot(type, df, cwdm):
+def __plot(type, df):
     plt.scatter(df['number'], df['reg_score'], marker='o', c='black', label='R**2')
     plt.scatter(df['number'], df['adj. r**2'], marker='o', c='blue', label='Adj. R**2')
     plt.xlabel('N_feature')
     plt.ylabel('Score of ' + type + ' model')
     plt.axis([-1, 31, 0, 1])
     plt.legend(loc=8)
-    plt.savefig(cwdm + 'feature_score_' + type + '.png')
+    plt.savefig('feature_score_' + type + '.png')
     plt.close()
 
 
-def feature_selector_ensemble(type, cwdd, cwdm):
+def feature_selector_ensemble(type, cwdd):
     X_train, X_test, y_train, y_test, predict_X, features = pre.raw_preprocessing(cwdd)
     reg_list = []
     local_feature = features
@@ -49,8 +49,8 @@ def feature_selector_ensemble(type, cwdd, cwdm):
         del local_feature[low]
         X_train = np.delete(X_train, low, axis=1)
         X_test = np.delete(X_test, low, axis=1)
-    df.to_csv(cwdm + 'feature_selection_%s.csv' % type, index=False)
-    __plot(type, df, cwdm)
+    df.to_csv('feature_selection_%s.csv' % type, index=False)
+    __plot(type, df)
     return reg_list
 
 
@@ -70,7 +70,7 @@ def __pca_test(dem, X_tr, X_te, y_train, y_test):
     return reg, score
 
 
-def feature_selector_pca(X_tr, X_te, y_tr, y_te, feature, cwd):
+def feature_selector_pca(X_tr, X_te, y_tr, y_te, feature):
     reg_list = []
     X_train, X_test, y_train, y_test = X_tr, X_te, y_tr, y_te
     local_feature = feature
@@ -79,5 +79,5 @@ def feature_selector_pca(X_tr, X_te, y_tr, y_te, feature, cwd):
         reg, score = __pca_test(i, X_train, X_test, y_train, y_test)
         df = df.append(pd.DataFrame([[i, score, 1 - (1 - score * score) * (40) / (40 - i)]], columns=df.columns),
                        ignore_index=True)
-    df.to_csv(cwd + 'feature_selection_pca.csv', index=False)
+    df.to_csv('feature_selection_pca.csv', index=False)
     return reg_list

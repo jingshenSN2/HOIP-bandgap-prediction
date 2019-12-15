@@ -1,12 +1,13 @@
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 from sklearn.model_selection import train_test_split
+import os
 
-
-def raw_preprocessing(cwd, test_ratio=0.2):
+def raw_preprocessing(cwdd, test_ratio=0.2):
+    os.chdir(cwdd)
     scaler = MinMaxScaler()
-    trates = pd.read_csv(cwd + 'HOIP-30_drop.csv', header=0)
-    predic = pd.read_csv(cwd + 'unknown_comb.csv', header=0)
+    trates = pd.read_csv('HOIP-30_drop.csv', header=0)
+    predic = pd.read_csv('unknown_comb.csv', header=0)
     trates_y = trates['bandgap-PBE(eV)']
     trates.drop(['A-site', 'B-site', 'X-site', 'bandgap-PBE(eV)'], axis=1, inplace=True)
     predic.drop(['A-site', 'B-site', 'X-site'], axis=1, inplace=True)
@@ -18,10 +19,10 @@ def raw_preprocessing(cwd, test_ratio=0.2):
     return X_train, X_test, y_train, y_test, predict_X, list(trates.columns)
 
 
-def drop_preprocessing(cwd, features, test_ratio=0.2):
+def drop_preprocessing(features, test_ratio=0.2):
     scaler = MinMaxScaler()
-    trates = pd.read_csv(cwd + 'HOIP-30_drop.csv', header=0)
-    predic = pd.read_csv(cwd + 'unknown_comb.csv', header=0)
+    trates = pd.read_csv('HOIP-30_drop.csv', header=0)
+    predic = pd.read_csv('unknown_comb.csv', header=0)
     trates_y = trates['bandgap-PBE(eV)']
     trates.drop(['A-site', 'B-site', 'X-site', 'bandgap-PBE(eV)'], axis=1, inplace=True)
     trates = trates[features]

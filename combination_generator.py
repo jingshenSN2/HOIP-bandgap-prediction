@@ -2,12 +2,12 @@ import pandas as pd
 import math
 
 
-def combination_generator(cwd):
-    dfA = pd.read_csv(cwd + 'A_feature.csv', header=0)
-    dfB = pd.read_csv(cwd + 'B_feature.csv', header=0)
-    dfX = pd.read_csv(cwd + 'X_feature.csv', header=0)
+def combination_generator():
+    dfA = pd.read_csv('A_feature.csv', header=0)
+    dfB = pd.read_csv('B_feature.csv', header=0)
+    dfX = pd.read_csv('X_feature.csv', header=0)
 
-    df = pd.read_csv(cwd + 'HOIP-30.csv', header=0)
+    df = pd.read_csv('HOIP-30.csv', header=0)
     df.drop(df.index, inplace=True)
     df.drop('bandgap-PBE(eV)', axis=1, inplace=True)
     for ia in range(len(dfA)):
@@ -29,7 +29,7 @@ def combination_generator(cwd):
                       lb['B_p-electron'], lx['EA_X'], lb['B_s-electron'], lx['X_d-electron'], lb['B_f-electron'],
                       lx['X_f-electron']]], columns=df.columns)
                 df = df.append(newRow, ignore_index=True)
-    df.to_csv(cwd + 'all_combination.csv', index=False)
+    df.to_csv('all_combination.csv', index=False)
 
 
 def __add_hash(df):
@@ -42,9 +42,9 @@ def __add_hash(df):
     return df
 
 
-def unknown_combination_seperator(cwd):
-    dfAll = __add_hash(pd.read_csv(cwd + 'all_combination.csv', header=0))
-    dfKnown = __add_hash(pd.read_csv(cwd + 'HOIP-30_drop.csv', header=0))
+def unknown_combination_seperator():
+    dfAll = __add_hash(pd.read_csv('all_combination.csv', header=0))
+    dfKnown = __add_hash(pd.read_csv('HOIP-30_drop.csv', header=0))
     known_hash = {}
     for i in list(dfKnown['hash']):
         known_hash[i] = 1
@@ -54,4 +54,4 @@ def unknown_combination_seperator(cwd):
             drop_list.append(ia)
     dfAll.drop(drop_list, inplace=True)
     dfAll.drop(['hash'], axis=1, inplace=True)
-    dfAll.to_csv(cwd + 'unknown_comb.csv', index=False)
+    dfAll.to_csv('unknown_comb.csv', index=False)

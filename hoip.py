@@ -6,42 +6,47 @@ import test_ratio_selection as trs
 import raw_plot as rp
 import EDA as e
 import gbr as g
+import os
 
-data_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\data\\'
-model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model\\'
+data_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/data'
+model_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/model'
+
+os.chdir(data_directory)
 
 #初始数据集去重
-#ef.raw_drop_duplicates(data_directory)
+#ef.raw_drop_duplicates()
 
 #分离ABX离子特征
-#ef.element_feature(data_directory)
+#ef.element_feature()
 
 #生成特征组合的全集和补集
-#cg.combination_generator(data_directory)
-#cg.unknown_combination_seperator(data_directory)
+#cg.combination_generator()
+#cg.unknown_combination_seperator()
 
 #初始数据集和归一化后初始数据集的特征统计描述
-#e.raw_data_describe(data_directory)
-#e.pre_processing_data_describe(data_directory)
+#e.raw_data_describe()
+#e.pre_processing_data_describe()
 
 #初始数据集特征对标签的分布
-#rp.raw_feature_plot(data_directory, 'T_f')
+#rp.raw_feature_plot('T_f')
 
 #考察测试集比例对模型精度的影响
-trs.ratio_test(data_directory)
+#trs.ratio_test()
+
+os.chdir(model_directory)
 
 #不同方法做每次舍弃最差的特征筛选
-#feature_selection_gbr_reg_list = fs.feature_selector_ensemble('gbr', data_directory, model_directory)
-#feature_selection_rfr_reg_list = fs.feature_selector_ensemble('rfr', data_directory, model_directory)
-#feature_selection_abr_reg_list = fs.feature_selector_ensemble('abr', data_directory, model_directory)
-#feature_selection_etr_reg_list = fs.feature_selector_ensemble('etr', data_directory, model_directory)
+#feature_selection_gbr_reg_list = fs.feature_selector_ensemble('gbr', data_directory)
+#feature_selection_rfr_reg_list = fs.feature_selector_ensemble('rfr', data_directory)
+#feature_selection_abr_reg_list = fs.feature_selector_ensemble('abr', data_directory)
+#feature_selection_etr_reg_list = fs.feature_selector_ensemble('etr', data_directory)
 
 #考察PCA降维的影响
-#feature_selection_mlp_reg_list = fs.feature_selector_mlp(X_train, X_test, y_train, y_test, features, model_directory)
+#feature_selection_mlp_reg_list = fs.feature_selector_pca(X_train, X_test, y_train, y_test, features)
 
 
 #Gaussian Boosting R
-#g.gbr(cwdm, features)
+#g.gbr(features)
 
 #Kernel Ridge R
 

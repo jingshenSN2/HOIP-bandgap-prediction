@@ -4,7 +4,7 @@ import preprocessing as pre
 from sklearn.ensemble import GradientBoostingRegressor as GBR
 
 
-def ratio_test(cwdd):
+def ratio_test():
     df = pd.DataFrame(columns=['ratio', 'score'])
     for i in range(1, 100):
         X_train, X_test, y_train, y_test, predict_X, features = pre.raw_preprocessing(cwdd, i / 100)
@@ -14,5 +14,5 @@ def ratio_test(cwdd):
     plt.plot(df['ratio'], df['score'], 'k.-')
     plt.xlabel('train_set_ratio')
     plt.ylabel('score')
-    plt.savefig(cwdd + 'ratio_score.png')
-    df.to_csv(cwdd + 'ratio.png', index=None)
+    plt.savefig('ratio_score.png')
+    df.to_csv('ratio.png', index=None)
