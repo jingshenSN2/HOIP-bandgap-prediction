@@ -2,6 +2,8 @@ import element_feature as ef
 import combination_generator as cg
 import preprocessing as pre
 import feature_selection as fs
+import test_ratio_selection as trs
+import raw_plot as rp
 import EDA as e
 import gbr as g
 
@@ -21,6 +23,12 @@ model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model\\'
 #初始数据集和归一化后初始数据集的特征统计描述
 #e.raw_data_describe(data_directory)
 #e.pre_processing_data_describe(data_directory)
+
+#初始数据集特征对标签的分布
+#rp.raw_feature_plot(data_directory, 'T_f')
+
+#考察测试集比例对模型精度的影响
+trs.ratio_test(data_directory)
 
 #不同方法做每次舍弃最差的特征筛选
 #feature_selection_gbr_reg_list = fs.feature_selector_ensemble('gbr', data_directory, model_directory)
