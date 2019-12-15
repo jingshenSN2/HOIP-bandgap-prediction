@@ -11,14 +11,14 @@ data_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\data\\'
 model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model\\'
 
 #初始数据集去重
-#ef.raw_drop_duplicates(data_directory, silent=0)
+#ef.raw_drop_duplicates(data_directory)
 
 #分离ABX离子特征
-#ef.element_feature(data_directory, silent=0)
+#ef.element_feature(data_directory)
 
 #生成特征组合的全集和补集
-#cg.combination_generator(data_directory, silent=0)
-#cg.unknown_combination_seperator(data_directory, silent=0)
+#cg.combination_generator(data_directory)
+#cg.unknown_combination_seperator(data_directory)
 
 #初始数据集和归一化后初始数据集的特征统计描述
 #e.raw_data_describe(data_directory)

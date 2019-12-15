@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 
-
 def __boxplot(cwd, data, name):
     plt.figure(figsize=(18, 12))
     for i in range(30):

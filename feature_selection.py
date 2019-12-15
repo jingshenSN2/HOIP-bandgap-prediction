@@ -2,7 +2,6 @@ from sklearn.ensemble import GradientBoostingRegressor as GBR
 from sklearn.ensemble import RandomForestRegressor as RFR
 from sklearn.ensemble import AdaBoostRegressor as ABR
 from sklearn.ensemble import ExtraTreesRegressor as ETR
-from sklearn.decomposition import PCA
 from sklearn.decomposition import KernelPCA
 from sklearn.neural_network import MLPRegressor
 import pandas as pd
