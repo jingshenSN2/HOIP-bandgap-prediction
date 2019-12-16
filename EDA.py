@@ -27,6 +27,21 @@ def __density(data, name):
     plt.savefig(name)
 
 
+def bar_plot():
+    data = pd.read_csv('HOIP-30_drop.csv', header=0)
+    plt.figure(figsize=(30, 20))
+    for i in range(30):
+        plt.ylabel(None)
+        plt.subplot(5, 6, i + 1)
+        if i == 29:
+            continue
+        else:
+            data.iloc[:, i].value_counts().sort_index().plot.bar()
+            plt.legend(loc='upper right')
+    plt.subplots_adjust(hspace=0.3, wspace=0.3)
+    plt.savefig('data_bar_plot.png')
+
+
 def raw_data_describe():
     data = pd.read_csv('HOIP-30_drop.csv', header=0)
     data.drop(['A-site', 'B-site', 'X-site'], axis=1, inplace=True)
@@ -42,7 +57,7 @@ def pre_processing_data_describe():
     data.drop(['A-site', 'B-site', 'X-site'], axis=1, inplace=True)
     npdata = scaler.fit_transform(data)
     data = pd.DataFrame(npdata, columns=data.columns)
-    data.describe(include=[np.number]).to_csv(cwd + 'eda\\pre_processing_describe.csv')
+    data.describe(include=[np.number]).to_csv('eda\\pre_processing_describe.csv')
     __boxplot(data, 'eda\\pre_processing_boxplot.png')
     data.drop(['X_f-electron'], axis=1, inplace=True)
     __density(data, 'eda\\pre_processing_density.png')
