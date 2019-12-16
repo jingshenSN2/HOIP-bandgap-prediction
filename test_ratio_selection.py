@@ -7,7 +7,7 @@ from sklearn.ensemble import GradientBoostingRegressor as GBR
 def ratio_test():
     df = pd.DataFrame(columns=['ratio', 'score'])
     for i in range(1, 100):
-        X_train, X_test, y_train, y_test, predict_X, features = pre.raw_preprocessing(cwdd, i / 100)
+        X_train, X_test, y_train, y_test, predict_X, features = pre.raw_preprocessing(i / 100)
         reg = GBR(random_state=1)
         reg.fit(X_train, y_train)
         df = df.append(pd.DataFrame([[1 - i / 100, reg.score(X_test, y_test)]], columns=df.columns), ignore_index=True)
