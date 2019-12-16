@@ -28,17 +28,12 @@ def __density(data, name):
 
 
 def bar_plot():
-    data = pd.read_csv('HOIP-30_drop.csv', header=0)
-    plt.figure(figsize=(30, 20))
-    for i in range(30):
-        plt.ylabel(None)
-        plt.subplot(5, 6, i + 1)
-        if i == 29:
-            continue
-        else:
-            data.iloc[:, i].value_counts().sort_index().plot.bar()
-            plt.legend(loc='upper right')
-    plt.subplots_adjust(hspace=0.3, wspace=0.3)
+    data = pd.read_csv('HOIP-30_drop.csv')
+    data.drop(['A-site', 'B-site', 'X-site'], axis=1, inplace=True)
+    scaler = MinMaxScaler()
+    npdata = scaler.fit_transform(data)
+    data = pd.DataFrame(npdata, columns=data.columns)
+    data.plot(kind='hist', bins=100, subplots=True, figsize=(20, 40))
     plt.savefig('data_bar_plot.png')
 
 
