@@ -15,4 +15,4 @@ def ratio_test(cwdd):
     plt.xlabel('train_set_ratio')
     plt.ylabel('score')
     plt.savefig(cwdd + 'ratio_score.png')
-    df.to_csv(cwdd + 'ratio.png', index=None)
+    df.to_csv(cwdd + 'ratio.csv', index=None)
