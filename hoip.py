@@ -6,12 +6,16 @@ import test_ratio_selection as trs
 import raw_plot as rp
 import EDA as e
 import gbr as g
+import krr as k
 import decision_tree as dt
 import MLP as mlp
 import os
 
-data_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/data'
-model_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/model'
+data_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\data'
+model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model'
+#data_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/data'
+#model_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/model'
+
 
 os.chdir(data_directory)
 
@@ -49,11 +53,14 @@ os.chdir(model_directory)
 # 考察PCA降维的影响
 # feature_selection_mlp_reg_list = fs.feature_selector_pca(X_train, X_test, y_train, y_test, features)
 
+feature_4 = ['P_A', 'P_B', 'X_p-electron', 'VE_B']
+feature_5 = ['P_A', 'r_B_s+p', 'IE_B', 'X_p-electron', 'VE_B']
 
 # Gaussian Boosting R
 # g.gbr(features)
 
 # Kernel Ridge R
+k.krr(feature_4)
 
 # Support Vector R
 
