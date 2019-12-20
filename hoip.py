@@ -6,7 +6,9 @@ import test_ratio_selection as trs
 import raw_plot as rp
 import EDA as e
 import gbr as g
+import gpr as gp
 import krr as k
+import svr as s
 import decision_tree as dt
 import MLP as mlp
 import os
@@ -53,18 +55,20 @@ os.chdir(model_directory)
 feature_4 = ['P_A', 'P_B', 'X_p-electron', 'VE_B']
 feature_5 = ['P_A', 'r_B_s+p', 'IE_B', 'X_p-electron', 'VE_B']
 
-# Gaussian Boosting R
-g.gbr(data_directory, feature_4)
-
-
-# Kernel Ridge R
-# k.krr(feature_4)
-
-# Support Vector R
+# Gradient Boosting R
+# g.gbr(data_directory, feature_4)
 
 # Gaussian Process R
+# gp.gpr(data_directory, feature_4)
+
+# Kernel Ridge R
+# k.krr(data_directory, feature_4)
+
+# Support Vector R
+s.svr(data_directory, feature_4)
 
 # Decision Tree R
 # dt.DT()
+
 # MLP R
 # mlp.MLP()
