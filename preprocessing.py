@@ -3,8 +3,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import os
 
-def raw_preprocessing(cwdd, test_ratio=0.2):
-    os.chdir(cwdd)
+def raw_preprocessing(data_dir, test_ratio=0.2):
+    os.chdir(data_dir)
     scaler = MinMaxScaler()
     trates = pd.read_csv('HOIP-30_drop.csv', header=0)
     predic = pd.read_csv('unknown_comb.csv', header=0)
@@ -19,7 +19,8 @@ def raw_preprocessing(cwdd, test_ratio=0.2):
     return X_train, X_test, y_train, y_test, predict_X, list(trates.columns)
 
 
-def drop_preprocessing(features, test_ratio=0.2):
+def drop_preprocessing(data_dir, features, test_ratio=0.2):
+    os.chdir(data_dir)
     scaler = MinMaxScaler()
     trates = pd.read_csv('HOIP-30_drop.csv', header=0)
     predic = pd.read_csv('unknown_comb.csv', header=0)

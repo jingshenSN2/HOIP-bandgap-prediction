@@ -13,9 +13,6 @@ import os
 
 data_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\data'
 model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model'
-#data_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/data'
-#model_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/model'
-
 
 os.chdir(data_directory)
 
@@ -57,10 +54,11 @@ feature_4 = ['P_A', 'P_B', 'X_p-electron', 'VE_B']
 feature_5 = ['P_A', 'r_B_s+p', 'IE_B', 'X_p-electron', 'VE_B']
 
 # Gaussian Boosting R
-# g.gbr(features)
+g.gbr(data_directory, feature_4)
+
 
 # Kernel Ridge R
-k.krr(feature_4)
+# k.krr(feature_4)
 
 # Support Vector R
 
