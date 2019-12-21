@@ -59,13 +59,13 @@ feature_5 = ['P_A', 'r_B_s+p', 'IE_B', 'X_p-electron', 'VE_B']
 # g.gbr(data_directory, feature_4)
 
 # Gaussian Process R
-# gp.gpr(data_directory, feature_4)
+gp.gpr(data_directory, feature_4)
 
 # Kernel Ridge R
 # k.krr(data_directory, feature_4)
 
 # Support Vector R
-s.svr(data_directory, feature_4)
+# s.svr(data_directory, feature_4)
 
 # Decision Tree R
 # dt.DT()
