@@ -5,18 +5,19 @@ import feature_selection as fs
 import test_ratio_selection as trs
 import raw_plot as rp
 import EDA as e
-import gbr as g
-import gpr as gp
-import krr as k
-import svr as s
-import Decision_Tree
-import MLP
+from training import gbr as g
+from training import gpr as gp
+from training import krr as k
+from training import svr as s
+from training import Decision_Tree
+from training import MLP
+from training import gpr as gp
 import os
 
-# data_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\data'
-# model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model'
-data_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/data'
-model_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/model'
+data_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\data'
+model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model'
+# data_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/data'
+# model_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/model'
 os.chdir(data_directory)
 
 # 初始数据集去重
@@ -57,19 +58,25 @@ feature_4 = ['P_A', 'P_B', 'X_p-electron', 'VE_B']
 feature_5 = ['P_A', 'r_B_s+p', 'IE_B', 'X_p-electron', 'VE_B']
 
 # Gradient Boosting R
-# g.gbr(data_directory, feature_4)
+#g.gbr(data_directory, model_directory, feature_4)
+#g.gbr(data_directory, model_directory, feature_5)
 
 # Gaussian Process R
-gp.gpr(data_directory, feature_4)
+#gp.gpr(data_directory, model_directory, feature_4)
+#gp.gpr(data_directory, model_directory, feature_5)
 
 # Kernel Ridge R
-# k.krr(data_directory, feature_4)
+#k.krr(data_directory, model_directory, feature_4)
+#k.krr(data_directory, model_directory, feature_5)
 
 # Support Vector R
-# s.svr(data_directory, feature_4)
+#s.svr(data_directory, model_directory, feature_4)
+#s.svr(data_directory, model_directory, feature_5)
 
 # Decision Tree R
-# Decision_Tree.DecisionTree(data_directory, feature_5)
+Decision_Tree.DecisionTree(data_directory, model_directory, feature_4)
+Decision_Tree.DecisionTree(data_directory, model_directory, feature_5)
 
 # MLP R
-# MLP.MLP(data_directory, feature_5)
+#MLP.MLP(data_directory, model_directory, feature_4)
+#MLP.MLP(data_directory, model_directory, feature_5)
