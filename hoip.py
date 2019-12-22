@@ -9,13 +9,14 @@ import gbr as g
 import gpr as gp
 import krr as k
 import svr as s
-import decision_tree as dt
-import MLP as mlp
+import Decision_Tree
+import MLP
 import os
 
-data_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\data'
-model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model'
-
+# data_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\data'
+# model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model'
+data_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/data'
+model_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/model'
 os.chdir(data_directory)
 
 # 初始数据集去重
@@ -65,10 +66,10 @@ feature_5 = ['P_A', 'r_B_s+p', 'IE_B', 'X_p-electron', 'VE_B']
 # k.krr(data_directory, feature_4)
 
 # Support Vector R
-s.svr(data_directory, feature_4)
+# s.svr(data_directory, feature_4)
 
 # Decision Tree R
-# dt.DT()
+# Decision_Tree.DecisionTree(data_directory, feature_5)
 
 # MLP R
-# mlp.MLP()
+MLP.MLP(data_directory, feature_5)
