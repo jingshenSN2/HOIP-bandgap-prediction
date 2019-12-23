@@ -42,7 +42,7 @@ def __add_hash(df):
     return df
 
 
-def unknown_combination_seperator():
+def unknown_combination_separator():
     dfAll = __add_hash(pd.read_csv('all_combination.csv', header=0))
     dfKnown = __add_hash(pd.read_csv('HOIP-30_drop.csv', header=0))
     known_hash = {}

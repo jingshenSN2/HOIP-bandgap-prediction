@@ -28,7 +28,7 @@ os.chdir(data_directory)
 
 # 生成特征组合的全集和补集
 # cg.combination_generator()
-# cg.unknown_combination_seperator()
+# cg.unknown_combination_separator()
 
 # 初始数据集和归一化后初始数据集的特征统计描述
 # e.raw_data_describe()
