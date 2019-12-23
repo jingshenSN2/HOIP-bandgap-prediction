@@ -56,27 +56,35 @@ os.chdir(model_directory)
 
 feature_4 = ['P_A', 'P_B', 'X_p-electron', 'VE_B']
 feature_5 = ['P_A', 'r_B_s+p', 'IE_B', 'X_p-electron', 'VE_B']
+feature_14 = ['T_f', 'O_f', 'IC_B', 'X_p-electron', 'P_A', 'IE_B', 'χ_B', 'EA_B', 'P_B', 'r_B_s+p', 'A_HOMO', 'A_LUMO',
+              'r_A.eff', 'r_B']
 
 # Gradient Boosting R
-#g.gbr(data_directory, model_directory, feature_4)
-#g.gbr(data_directory, model_directory, feature_5)
+# g.gbr(data_directory, model_directory, feature_4)
+# g.gbr(data_directory, model_directory, feature_5)
+g.gbr(data_directory, model_directory, feature_14)
 
 # Gaussian Process R
-#gp.gpr(data_directory, model_directory, feature_4)
-#gp.gpr(data_directory, model_directory, feature_5)
+# gp.gpr(data_directory, model_directory, feature_4)
+# gp.gpr(data_directory, model_directory, feature_5)
+gp.gpr(data_directory, model_directory, feature_14)
 
 # Kernel Ridge R
-#k.krr(data_directory, model_directory, feature_4)
-#k.krr(data_directory, model_directory, feature_5)
+# k.krr(data_directory, model_directory, feature_4)
+# k.krr(data_directory, model_directory, feature_5)
+k.krr(data_directory, model_directory, feature_14)
 
 # Support Vector R
-#s.svr(data_directory, model_directory, feature_4)
-#s.svr(data_directory, model_directory, feature_5)
+# s.svr(data_directory, model_directory, feature_4)
+# s.svr(data_directory, model_directory, feature_5)
+s.svr(data_directory, model_directory, feature_14)
 
 # Decision Tree R
-Decision_Tree.DecisionTree(data_directory, model_directory, feature_4)
-Decision_Tree.DecisionTree(data_directory, model_directory, feature_5)
+# Decision_Tree.DecisionTree(data_directory, model_directory, feature_4)
+# Decision_Tree.DecisionTree(data_directory, model_directory, feature_5)
+Decision_Tree.DecisionTree(data_directory, model_directory, feature_14)
 
 # MLP R
-#MLP.MLP(data_directory, model_directory, feature_4)
-#MLP.MLP(data_directory, model_directory, feature_5)
+# MLP.MLP(data_directory, model_directory, feature_4)
+# MLP.MLP(data_directory, model_directory, feature_5)
+# MLP.MLP(data_directory, model_directory, feature_14)
