@@ -20,3 +20,7 @@ def MLP(data_directory, model_dir, features):
 
     joblib.dump(grid.best_estimator_, 'mlp_%d_%.4f.m'%(len(features),grid.best_estimator_.score(X_test, y_test)))
 
+    df = pd.DataFrame(columns=['ml_bandgap', 'pbe_bandgap'])
+    df['pbe_bandgap'] = y_test
+    df['ml_bandgap'] = grid.best_estimator_.predict(X_test)
+    print(df)
