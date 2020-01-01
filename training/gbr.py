@@ -21,4 +21,5 @@ def gbr(data_dir, model_dir, features):
     df['pbe_bandgap'] = y_test
     df['ml_bandgap'] = grid.best_estimator_.predict(X_test)
     print(df)
+    return grid.best_estimator_
 

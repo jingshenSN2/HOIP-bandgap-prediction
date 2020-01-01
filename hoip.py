@@ -93,4 +93,13 @@ feature_14 = ['T_f', 'O_f', 'IC_B', 'X_p-electron', 'P_A', 'IE_B', 'χ_B', 'EA_B
 
 os.chdir(data_directory)
 
-predict.predict(model_directory, predict_directory)
+#predict.predict(model_directory, predict_directory)
+
+os.chdir(predict_directory)
+
+# predict.predict_plot('T_f')
+# predict.predict_plot('O_f')
+predict.predict_plot_byX('T_f')
+predict.predict_plot_byX('O_f')
+predict.predict_plot_byX('P_A')
+predict.predict_plot_byX('χ_B')
