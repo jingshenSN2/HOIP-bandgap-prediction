@@ -12,10 +12,12 @@ from training import svr as s
 from training import Decision_Tree
 from training import MLP
 from training import gpr as gp
+import predict
 import os
 
 data_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\data'
 model_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\model'
+predict_directory = 'D:\\PycharmProjects\\HOIP_bandgap_prediction\\predict'
 # data_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/data'
 # model_directory = '/Users/wangyizhou/Desktop/机器学习/大作业/model'
 os.chdir(data_directory)
@@ -85,6 +87,10 @@ feature_14 = ['T_f', 'O_f', 'IC_B', 'X_p-electron', 'P_A', 'IE_B', 'χ_B', 'EA_B
 # Decision_Tree.DecisionTree(data_directory, model_directory, feature_14)
 
 # MLP R
-MLP.MLP(data_directory, model_directory, feature_4)
+# MLP.MLP(data_directory, model_directory, feature_4)
 # MLP.MLP(data_directory, model_directory, feature_5)
 # MLP.MLP(data_directory, model_directory, feature_14)
+
+os.chdir(data_directory)
+
+predict.predict(model_directory, predict_directory)
