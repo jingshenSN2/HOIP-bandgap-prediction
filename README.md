@@ -12,6 +12,11 @@ matplotlib 3.1.1<br>
 ---
 取消hoip.py中的注释，并运行hoip.py。<br>
 
+项目成员
+---
+高靖松，js_gao@pku.edu.cn<br>
+雷哲轩，1700011714@pku.edu.cn<br>
+王艺洲，1700011804@pku.edu.cn<br>
 
 代码和数据文件结构
 ---
